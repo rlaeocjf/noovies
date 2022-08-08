@@ -7,6 +7,7 @@ import { useColorScheme } from "react-native";
 import { BLACK_COLOR, DARK_GREY, LIGHT_GREY, YELLOW_COLOR } from "../colors";
 import { Ionicons } from "@expo/vector-icons";
 import Record from "../screens/Record";
+import Timer from "../screens/Timer";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,6 +41,15 @@ const Tabs = () => {
       <Tab.Screen
         name="Record"
         component={Record}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name={"mic"} color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Timer"
+        component={Timer}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name={"mic"} color={color} size={size} />
